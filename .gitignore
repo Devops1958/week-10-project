@@ -1,0 +1,4 @@
+**/.infracost/*
+.terraform.lock.hcl
+**/.terraform/*
+**vpc-project12/*

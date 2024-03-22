@@ -26,6 +26,7 @@ resource "aws_subnet" "public2" {
    availability_zone = "us-east-1b"
    cidr_block = "192.168.2.0/24"
    vpc_id = aws_vpc.vpc1.id
+   map_public_ip_on_launch = true
    tags = {
      Name ="public-subnet-2"
      env = "dev"
@@ -70,7 +71,7 @@ resource "aws_route_table" "rtprivate" {
  vpc_id = aws_vpc.vpc1.id 
  route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.gw1.id
+    gateway_id = aws_nat_gateway.nat1.id
  }
 }
 ## Subnet association
